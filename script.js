@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     var moneyMade = function() {
       if (randomNum === guess){
-        return (bet * 100);
+        return (bet * 10);
       } else if (Math.abs((randomNum - guess === 1))) {
         return (bet);
       } else {
@@ -38,7 +38,7 @@ $(document).ready(function() {
     addWinnings(winnings);
 
 
-    $("#total").text("You have " + total + " at your disposal");
+    $("#total").text("You have $" + total + " at your disposal");
   });
 });
 
