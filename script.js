@@ -1,3 +1,30 @@
+var alerted = true;
+var supremeAlert = true;
+var basicAlert = true;
+
+function checkBroke(total) {
+  if ((total < 0) && (basicAlert === true)) {
+    alert("You have officially taken a loan from the bank of Yolo. If you continue with the game and fail to repay Beiber will find you.");
+    basicAlert = false;
+  }
+}
+
+
+function checkTotal(total) {
+  if ((total < -100) && (alerted === true)) {
+    alert("I know where you live.");
+    alerted = false;
+  }
+}
+
+function checkTotalAgain(total) {
+  if ((total < -300) && (supremeAlert === true)) {
+    alert("Beiber is coming to break your legs.");
+    alerted = false;
+  }
+}
+
+
 $(document).ready(function() {
 
   var total = 100;
@@ -21,7 +48,7 @@ $(document).ready(function() {
 
     var moneyMade = function() {
       if (randomNum === guess){
-        return (bet * 10);
+        return (bet * 2);
       } else if (Math.abs((randomNum - guess === 1))) {
         return (bet);
       } else {
@@ -36,7 +63,13 @@ $(document).ready(function() {
     moneyMade();
     var winnings = moneyMade();
     addWinnings(winnings);
+    checkTotal(total);
+    checkTotalAgain(total);
+    checkBroke(total);
 
+    var leg_breaker = function(total) {
+      total
+    }
 
     $("#total").text("You have $" + total + " at your disposal");
   });

@@ -35,8 +35,10 @@ header {
 }
 
 #game {
-  
+  padding-top: 40px;
+  padding-left: 25px;
   font-family: 'Lekton', sans-serif;
+  text-align:center;
 
 }
 
@@ -53,9 +55,20 @@ h3 {
 #about {
   background-color:
   width: 100%;
+  padding-left: 25px;
 
 }
 
 #rules {
   font-family: 'Lekton', sans-serif;
+
+}
+
+button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+
 }
