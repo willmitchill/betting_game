@@ -25,6 +25,7 @@ function checkTotalAgain(total) {
 }
 
 
+
 $(document).ready(function() {
 
   var total = 100;
@@ -48,13 +49,23 @@ $(document).ready(function() {
 
     var moneyMade = function() {
       if (randomNum === guess){
+        $("#message").html("Winner winner Beiber's coming over for dinner.").css('color', 'green');
+        // resetMessage();
         return (bet * 2);
       } else if (Math.abs((randomNum - guess === 1))) {
+        $("#message").html("One off, I'll let you keep your cash");
+        // resetMessage();
         return (bet);
       } else {
+        $("#message").html("You lost, now Beiber is gunna force you to wear his diaper pants for a month.").css('color', 'red');
+        // resetMessage();
         return 0;
       }
     }
+
+     var resetMessage = setTimeout(function () {
+         $('#message').html('Try again if your not scared of the Beiber fever.').css('color', 'black');
+     }, 2500);
 
     var addWinnings = function(winnings) {
       total = (total + winnings);
@@ -70,6 +81,7 @@ $(document).ready(function() {
     var leg_breaker = function(total) {
       total
     }
+
 
     $("#total").text("You have $" + total + " at your disposal");
   });
